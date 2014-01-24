@@ -30,6 +30,9 @@ public class Person1 {
 	 * @return the modified string
 	 */
 	private String calc(String input) {
+	  if (input.length() < 3) {
+	  	return input;
+	  }
 	  StringBuffer buffer = new StringBuffer();
 	  for (int i = 2; i < input.length(); i++) {
 	  	buffer.append(input.charAt(i));
