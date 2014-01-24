@@ -34,14 +34,14 @@ public class Person2 {
 	 */
 	private String calc(String input) {
 	  //Person 2 put your implementation here
-	  List<Character> list = new ArrayList<Character>();
+	  ArrayList<Character> list = new ArrayList<Character>();
 	  for (char c: input.toCharArray()) {
 	  	list.add(c);
 	  }
 	  Random r = new Random();
 	  StringBuilder newString = new StringBuilder(input.length());
 	  while (list.size()!=0) {
-	  	int randomNum = new r.nextInt(list.size());
+	  	int randomNum = r.nextInt(list.size());
 	  	newString.append(list.remove(randomNum));
 	  }
 	  return newString.toString();
