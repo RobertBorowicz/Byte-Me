@@ -27,6 +27,12 @@
     <string name="interest">Interest</string>
     <string name="accept_button">Accept</string>
     <string name="decline_button">Decline</string>
-   
+    <string name="title_activity_account">Your Account</string>
+    <string name="transaction">Make Transaction</string>
+    <string name="amount">Amount</string>
+    <string name="withdraw">Withdraw</string>
+    <string name="deposit">Depositw</string>
+    <string name="title_activity_transaction">Make a Transaction</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>

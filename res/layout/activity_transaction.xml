@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <EditText 
+        android:id="@+id/transaction"
+        android:hint="@string/amount"
+   		android:inputType="numberDecimal"
+   		android:layout_width="match_parent"
+   		android:layout_height="wrap_content"
+   		android:layout_marginTop="8dp" />
+    
+    <RadioButton android:id="@+id/withdraw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/withdraw"
+        android:onClick="onRadioButtonClicked"/>
+    
+    <RadioButton android:id="@+id/deposit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/deposit"
+        android:onClick="onRadioButtonClicked"/>
+    
+     <Button 
+        android:id="@+id/acceptButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/accept_button"
+        android:onClick="accept" />
+    
+    <Button 
+        android:id="@+id/declineButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/decline_button"
+        android:onClick="decline" />
+
+    
+</RadioGroup>

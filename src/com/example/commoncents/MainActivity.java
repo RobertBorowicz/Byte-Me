@@ -3,10 +3,13 @@ package com.example.commoncents;
 import java.util.ArrayList;
 
 import android.os.Bundle;
+import android.app.ActionBar.LayoutParams;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.support.v4.app.NavUtils;
 import android.annotation.TargetApi;
@@ -23,27 +26,38 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		// Show the Up button in the action bar.
 		setupActionBar();
-		TextView accounts = (TextView)findViewById(R.id.accounts);
-		StringBuffer buffer = new StringBuffer();
-		for (Account account: accountsList) {
-			buffer.append(account.getAccountName() + "\n");
-			buffer.append("Display Name:" + "\t" + account.getDisplayName() + "\n");
-			buffer.append("Account Owner:" + "\t" + account.getAccountOwner() + "\n");
-			buffer.append("Balance:" + "\t" + account.getBalance() + "\n");
-			buffer.append("Interest Rate:" + "\t" + account.getInterest() + "\n");
-			buffer.append("\n");
-		}
-		accounts.setText(buffer.toString());
+		this.createAccount(findViewById(android.R.id.content));
 	}
 	
 	public void addAccount(View view) {
 		Intent intent = new Intent(this, AddAccountActivity.class);
 		startActivity(intent);
-			
 	}
 	
-
-
+	
+	private void createAccount(View view) {
+		if (!accountsList.isEmpty()) {
+			for (int i=0; i<accountsList.size(); i++) {
+				Button newButton = new Button(this);
+				newButton.setText(accountsList.get(i).getDisplayName());
+				LinearLayout ll = (LinearLayout) findViewById(R.id.buttonLayout);
+				LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+				ll.addView(newButton, lp);
+				final int index = i;
+				
+				newButton.setOnClickListener(new View.OnClickListener() {
+		             public void onClick(View v) {
+		                Intent intent = new Intent(MainActivity.this, AccountActivity.class);
+		                intent.putExtra("fuck", index);
+		                startActivity(intent);
+		             }
+		         });
+					
+			}
+		}
+	}
+	
+	
 	/**
 	 * Set up the {@link android.app.ActionBar}, if the API is available.
 	 */

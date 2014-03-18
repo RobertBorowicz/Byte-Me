@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="11"
         android:targetSdkVersion="17" />
 
     <application
@@ -53,6 +53,22 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.commoncents.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.example.commoncents.AccountActivity"
+            android:label="@string/title_activity_account"
+            android:parentActivityName="com.example.commoncents.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.commoncents.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.example.commoncents.TransactionActivity"
+            android:label="@string/title_activity_transaction"
+            android:parentActivityName="com.example.commoncents.AccountActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.commoncents.AccountActivity" />
         </activity>
     </application>
 

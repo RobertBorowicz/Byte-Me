@@ -32,6 +32,10 @@ public class Account {
 		return this.startingBalance;
 	}
 	
+	public void setBalance(double d) {
+		startingBalance = d;
+	}
+	
 	public double getInterest() {
 		return this.interest;
 	}

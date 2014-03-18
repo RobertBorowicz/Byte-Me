@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.support.v4.app.NavUtils;
 import android.annotation.TargetApi;
@@ -43,6 +44,7 @@ public class AddAccountActivity extends Activity {
 		else 
 			this.decline(view);
 	}
+	
 	
 	public void decline(View view) {
 		Intent intent = new Intent(this, MainActivity.class);
